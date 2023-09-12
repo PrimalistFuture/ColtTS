@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Annotation Basics</title>
+</head>
+<body>
+  <h1>Type Annotation Basics</h1>
+
+  <p>We can tell TypeScript all sorts of things. 'This function returns a boolean'. 'This function accepts two numbers and returns a number.' 'This object must have a property called colors, and it must be set to an array of strings.' 'This variable is a string.'
+  </p>
+
+  <p>You can run the file from any terminal, including the integrated terminal from vscode. <b>tsc Name_of_file.ts</b> will compile the file down into JS. It will do this by default EVEN IF THERE ARE ERRORS. This is tweakable.</p>
+
+  <h2>Variables</h2>
+
+  <p>
+    After a variable name, assign a basic type by adding : type. CTD. <b>declaration variableName: type = assignment;</b>
+  </p>
+
+  <h2>Type Inference</h2>
+
+  <p>Most of the time, the above syntax is overly-explicit and not needed. </p>
+
+  <p><b>Type Inference</b> refers to the TypeScript compiler's ability to infer types from certain values in your code. TS can remember a value's type even if you don't provide a type annotation, and it will enforce that type in the future.</p>
+
+  <h2>Any</h2>
+
+  <p><b>any</b> is the escape hatch! It turns off type checking for this variable so you can not get accosted by TS if you so desire. Don't overuse it, that entirely defeats the point of TS.</p>
+
+  <h2>Delayed Initialized and Implicit Any</h2>
+
+  <p>In the scenario where you need to declare a variable without assigning anything to it, TS will infer that that variable has a type of any.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
