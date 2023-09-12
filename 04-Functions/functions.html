@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+  <h1>Functions</h1>
+
+  <h2>Function Parameters</h2>
+
+  <p>In TS, we can specify the type of function parameters in a function definition. This allows TS to enforce the types for the values being passed into your function. Typing parameters is just like typing variables.</p>
+
+  <p>CTD for a few various examples</p>
+
+  <h2>Function Return Types</h2>
+
+  <p>We can also specify the type returned by a function. Even though TS can often infer it, explicit annotations can be preferable. Add the type annotation after the function parameter list.</p>
+
+  <h2>Anonymous Functions</h2>
+
+  <p>When TS can infer how an unnamed function is going to be called, it can automatically infer its parameters' types.</p>
+
+  <h2>Void Type</h2>
+
+  <p>The <b>void</b> is a return type for functions that don't actually return anything. It means that the function is void of any data. TS can infer this type pretty well, but it may want you to annotate a function with a void return explicitly.</p>
+
+  <h2>Never</h2>
+
+  <p>The <b>never</b> type represents values that never occur. We might use it to annotate a function that always throws an exception, or a function that never finishes executing. </p>
+
+  <p>Not to be confused with void, which returns undefined or null, which is technically still a type of value. With never, a function doesn't ever finish executing.</p>
+
+
+
+
+
+</body>
+</html>
