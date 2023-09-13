@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Object Types</title>
+</head>
+<body>
+  <h1>Object Types</h1>
+
+  <p>In TypeScript, we can create annotations to describe the shape of the object. Accessing a property on that object that isn't defined or performing operations without keeping types in mind will throw errors, not just fail silently.</p>
+
+  <p>These object annotations can be passed into functions, or to variables as well.</p>
+
+  <p>Can use the object annotations to describe the return type of a function too.</p>
+
+  <h2>Excess Properties</h2>
+
+  <p>In JS, if you pass in extra parameters to a function, it doesn't have a problem with that and sends the function on its merry way. Similarly, we can pass in extra properties of an object into a function that makes use of some of the properties and the extra ones will just be ignored.</p>
+
+  <p>TypeScript though doesn't like this one bit. When the object is defined in-line of the function call, it wants the properties to line up perfectly.</p>
+
+  <p>This doesn't apply if you pass in a variable which is an object that has excess properties, TS is just fine with that, just like JS would be.</p>
+
+  <h2>Type Alias</h2>
+
+  <p>Instead of writing out object types in an annotation, we can declare them seperately in a type alias, which is simply the desired shape of the object. This allows us to make our code more readable, and even reuse types elsewhere in our code.</p>
+
+  <p>Commonly used even in simple objects, and especially useful for typing nested objects. </p>
+
+  <h2>Optional Properties</h2>
+
+  <p>Normally, TS will yell at us if we are missing any of the keys from an object annotation we said would be there. That is what we want it to do.</p>
+
+  <p>But keys can also be <b>optional</b>, so TS will chill the fuck out. This is done with a ? before the type annotation. CTD.</p>
+
+  <h2>readonly Keyword</h2>
+
+  <p>The <b>readonly</b> keyword can go on objects or arrays and will flag TS to yell at us if we attempt to change those properties / values. If the readonly key was an array or an object, we could add to that but we could not reassign it.</p>
+
+  <h2>Intersection Types</h2>
+
+  <p>You can combine two declared Types with an & character.</p>
+
+
+</body>
+</html>
