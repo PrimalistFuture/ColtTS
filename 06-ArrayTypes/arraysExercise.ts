@@ -40,7 +40,7 @@ function getTotal(products: Product[]): number {
 }
 
 // using reduce
-// wtf even is this bullshit
+// wtf even is this reduce bullshit
 function getTotalWithReduce(products: Product[]): number {
     return products.reduce((product, currentValue) => product + currentValue.price, 0);
 }
