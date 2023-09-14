@@ -16,12 +16,23 @@
         types we want to include. TS will enforce it from there.
     </p>
 
-    <p></p>
+    <h2>Union Types with Functions</h2>
 
+    <p>Things can get strange if your function tries to do something to a parameter that can be one of a union of
+        several types. To get around this, we can use <b>Type Narrowing</b>, which is some conditional logic to handle
+        the different types that our union expects. Can be done many different ways, but typeof === 'string' or whatever
+        is very common.
+    </p>
 
+    <h2>Union Types with Arrays</h2>
 
+    <p>Can be applied to arrays as well. Place () around the types, <b>variable: (type | type)[] = [stuff]</b></p>
 
+    <h2>Union Types and Literal Types</h2>
 
+    <p>Literal Types are not just types, they are the values themselves. On their own, that's not super helpful. But
+        they can be combined with unions to achieve very fine-tuned type options for TypeScript to enforce. CTD.
+    </p>
 
 
 
