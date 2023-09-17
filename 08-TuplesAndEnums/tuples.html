@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuples and Enums</title>
+</head>
+
+<body>
+    <h1>Tuples and Enums</h1>
+
+    <h2>Tuples</h2>
+
+    <p><b>Tuples</b> are a special type exclusive to TypeScript; they don't exist in plain old JavaScript. Tuples are
+        arrays of fixed lengths and ordered with specific types - like super rigid arrays.</p>
+
+    <p>They are never required, but because they are more structured, they can be beneficial. Never any mystery because
+        the length is fixed and the contents must all be exactly typed.</p>
+
+    <p>Somewhat strangely, tuples don't complain if you push or do other array specific things to them. TS just lets
+        that happen and doesn't complain. It is a limitation of the tuple type. Can do all sorts of array methods that
+        you wouldn't normally want to be able to do.</p>
+
+    <p>Useful for combining data that is linked to each other in some way and shouldn't be seperated.</p>
+
+    <p>Very rarely used. Much of the time, they are eclipsed by objects and Plain Old JavaScript arrays.</p>
+
+    <h2>Enums</h2>
+
+    <p><b>Enums</b> allow us to define a set of named constants. We can give these constants numeric or string values.
+        There are quite a few options with Enums.
+    </p>
+
+    <p>They exist in a bunch of languages out of the box, but not JavaScript. They are only found in TypeScript.</p>
+
+    <p>Anytime we are working with a set of values that we are working with repeatedly enough to give meaningful names,
+        Enums are a great option.</p>
+
+    <p>Because they are often constants, sometime global, they are traditionally CAPSLOCKED.</p>
+
+    <p>By default, each item in the enum is assigned a number starting at 0. This number can be changed with an =
+        following the constant. Can even be assigned to strings.</p>
+
+    <p>Unlike most things that just go away when TS compiles into JS, enums actually result in some extra code. They
+        compile into an immediately invoked function. This might not be exactly what you want, or it might not cause any
+        problems.</p>
+
+    <h3>Why Enums?</h3>
+
+    <p>Pretty marginal benefit, but can be a nice, neat way of organizing your code. Gives us auto complete on the
+        enums, which can be quite nice.</p>
+
+
+
+
+
+</body>
+
+</html>
