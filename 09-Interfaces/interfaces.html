@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaces</title>
+</head>
+
+<body>
+    <h1>Interfaces</h1>
+
+    <p><b>Interfaces</b> serve almost the exact same purpose as custom type aliases, with a slightly different syntax.
+        We can use interfaces to create reuseable, modulat types that describe the shape of objects only.
+    </p>
+
+    <p>Just like in a type alias, we can make any of our properties in the interface object optional with a ? right
+        before the annotation of the type. </p>
+
+    <p>Can do readonly as well, just like a type alias.</p>
+
+    <p>We can also describe the methods included on the interface, what they accept and what they return.</p>
+
+    <p>One unique thing with interfaces compared to type aliases is that they can be 'reopened' where you can add new
+        properties onto the interface without overwriting the interface. Can be useful then if you are using someone
+        else's interface and you want to tack on some properties you need, without telling the author what their
+        interface should now have to suit you.
+    </p>
+
+    <p>Similar to what a class might do in object oriented programming, we can also extend an interface to build off an
+        existing interface to suit our specific needs. We can also extend from multiple other interfaces.
+    </p>
+
+    <h2>Types vs Interfaces</h2>
+
+    <p>Generally two ways of accomplishing the same thing.</p>
+
+    <p>Interfaces only describe the shape of objects! Types can be anything. But interfaces can be reopened and extended
+        (though types can be extended in a slightly different syntax called intersection, check that section).</p>
+
+
+
+</body>
+
+</html>
