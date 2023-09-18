@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript Compiler</title>
+</head>
+<body>
+  <h1>TypeScript Compiler</h1>
+
+  <p>This section is a small break from TS syntax to talk about the TS compiler. We will be configuring out settings and whatnot. </p>
+
+  <p>Create the TS config file with <b>tsc --init</b> in the folder you want to be make a tsconfig.json file. THIS IS A JSON FILE SO YOU NEED TO USE DOUBLE QUOTES, NOT SINGLE QUOTES.</p>
+
+  <p>Remember to compile your TS into JS you need to use <b>tsc NAMEOFFILE.ts</b>, which will then make a .js file with all of the TS bits removed.</p>
+
+  <h2>Watch Mode</h2>
+
+  <p>The <b>tsc -w NAMEOFFILE.ts</b> will 'watch' a file for changes and automatically recompile when something changes. This will give you error information in your terminal. </p>
+
+  <h2>Multiple Files</h2>
+
+  <p>If we have multiple files to compile, of course we could do them individually.  But if both files are found in the same folder, the command <b>tsc</b> by default will just compile any .ts files it comes across.</p>
+
+  <h2>The Files Compiler Option</h2>
+
+  <p>If you want to tell tsc to compile a certain file by default, you can change that in the tsconfig.json file, by adding it to a files array outside of the compileOptions folder.</p>
+
+  <p>We can also tell TS to <b>include</b> folders, which will recursively look through all of the files and add them. The <b>exclude</b> keyword then tells TS to ignore certain files or folders that would otherwise be included. By default, exclude will not look in your node_modules folder. So if something is excluded, make sure to add back in "node_modules" so TS doesn't go burrowing down into that.</p>
+
+
+
+
+
+</body>
+</html>
