@@ -20,11 +20,16 @@ class Player {
     // The # makes this private. That is not part of the syntax or setting a property outside of the constructor.
     #score = 0;
     #numLives = 10;
+    static description = "Player in our game";
     constructor(first, last) {
         this.first = first;
         this.last = last;
         // private in constuctor
         this.#secret();
+    }
+    // can only be called on the Player class, not the instances.
+    static randPlayer() {
+        new Player('Andy', "Samberg");
     }
     taunt() {
         console.log('BOOYA');
@@ -65,3 +70,14 @@ p1.numLives
 
 const p2 = new Player('charlie', 'b');
 p2.taunt();
+
+// Now adminplayer will have all of the properties and methods that Player itself does.
+class AdminPlayer extends Player {
+    constructor(first, last, powers) {
+        // first and last will be intercepted by the base class
+        super(first, last);
+        this.powers = powers;
+    }
+    isAdmin = true;
+
+}

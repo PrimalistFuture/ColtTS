@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript Classes</title>
+</head>
+
+<body>
+    <h1>TypeScript Classes</h1>
+
+    <p>Very similar with some important differences. Mostly CTD because its easier to see than to explain.</p>
+
+    <h2>Public and Private</h2>
+
+    <p>We saw last section how we could make certain properties or methods private with the # before it.</p>
+
+    <p>In TS we have a similar idea implemented with the <b>private and public keywords.</b> By default, every property
+        and method is public. It can be accessed from inside and outside of the class and from the instances. Even those
+        that are readonly are accessible.</p>
+
+    <p>The <b>private</b> implementation is different that the # though, because it actually changes the name of the
+        property. score is different from #score. But the private keyword doesn't actually add the # to the property. It
+        just sits on top of the property and adds TS protection before the JS is compiled, but doesn't alter the JS code
+        in any way.
+    </p>
+
+    <h2>Parameter Properties</h2>
+
+    <p>TS gives us some nice shorthand to get around a bunch of constructor properties. In the parameters of the
+        constructor function, we can declare the properties that way.</p>
+
+    <p>Compiles into the normal constructor properties in JS.</p>
+
+    <h2>Getters and Setters</h2>
+
+    <p>TS will make any property without a setter as readonly.</p>
+
+    <p>Any property with the set keyword should not have a return type, TS will get mad.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
