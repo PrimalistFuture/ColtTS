@@ -39,8 +39,32 @@
 
     <p>Any property with the set keyword should not have a return type, TS will get mad.</p>
 
+    <h2>The Protected Modifier</h2>
 
+    <p>Protected comes into play when working with an inherited subclass. When you make something private, it can't be
+        accessed, even from the subclass.
+    </p>
 
+    <h2>Interfaces and Classes</h2>
+
+    <p>We talked about how interfaces could be used to describe the shape of objects. But they can also be used to
+        describe classes as well. CTD for how we use a normal interface to implemnt a class description. </p>
+
+    <h2>Abstract Classes</h2>
+
+    <p>These don't exist in JS, they are exclusive to TS. Done with the <b>abstract</b> keyword before the class
+        definition. The idea is that we can define a bunch of methods that can then be implemented by a child subclass.
+        Encapsulates all of the code we want them to have, then they can use what they need to be unique. Reduces
+        duplication.</p>
+
+    <p>We can also use <b>abstract</b> on methods, meaning subclasses must have that method.</p>
+
+    <p>Changes a bunch. First, it means we cannot make new instances of that class.</p>
+
+    <p>Because it can have non-abstract methods as well, abstract classes end up being a hybrid between classes
+        themselves and interfaces because we can still call those non-abstract methods. Can't do anything like that on
+        an interface, which just describes an object.
+    </p>
 
 
 

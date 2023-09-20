@@ -30,7 +30,8 @@ class ParamPlayer {
     constructor(
         public first: string,
         public last: string,
-        private _score: number = 0,
+        // protected keyword is like private, but lets us access in child classes
+        protected _score: number = 0,
     ) { }
 
     private secretMethod(): void {
@@ -54,3 +55,79 @@ class ParamPlayer {
 }
 
 let lulu = new ParamPlayer('Lulu', 'Baby');
+
+// Uses the protected _score from ParamPlayer
+class SuperPlayer extends ParamPlayer {
+    public isAdmin: boolean = true;
+    maxScore() {
+        this._score = 9999999;
+    }
+}
+
+
+// Interface and Classes
+interface Colorful {
+    color: string;
+}
+
+interface Printable {
+    print(): void;
+}
+
+class Bike implements Colorful {
+    // uses Parameter properties shorthand to take in a color
+    constructor(public color: string) { }
+}
+const bike1 = new Bike('red');
+
+// implements two entirely different interfaces.
+class Jacket implements Colorful, Printable {
+    constructor(public brand: string, public color: string) { }
+
+    print() {
+        console.log(`${this.brand} ${this.color}`)
+    }
+}
+
+const jacket1 = new Jacket('Speedo', 'blue');
+
+
+// Abstract Class
+abstract class Employee {
+    constructor(public first: string, public last: string) { }
+    // abstract on a method means that any subclass must have a method with that name.
+    abstract getPay(): number;
+}
+
+class FullTimeEmployee extends Employee {
+    constructor(first: string, last: string, private salary: number) {
+        // super passes first and last back to employee to construct
+        super(first, last);
+    }
+    // TS would be mad if we didn't have this method
+    getPay(): number {
+        return this.salary;
+    }
+}
+
+class PartTimeEmployee extends Employee {
+    constructor(
+        first: string,
+        last: string,
+        private hourlyRate: number,
+        private hoursWorked: number
+    ) {
+        super(first, last);
+    }
+    getPay(): number {
+        return this.hourlyRate * this.hoursWorked;
+    }
+}
+
+// cannot create an instance of the employee class
+const emp1 = new Employee()
+// can still create instances of classes that extends from an abstract class
+const betty = new FullTimeEmployee("Betty", "White", 950);
+console.log(betty.getPay())
+
+const bill = new PartTimeEmployee("Bill", "SonofBill", 2, 10);
