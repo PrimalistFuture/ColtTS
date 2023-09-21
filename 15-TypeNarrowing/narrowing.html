@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Narrowing</title>
+</head>
+
+<body>
+    <h1>Type Narrowing</h1>
+
+    <p>Refers to the pattern in TypeScript in which you have a function that could take an input of multiple types, and
+        you have to perform some logic to it in order to handle those different types properly.
+    </p>
+
+
+    <h2>typeof</h2>
+    <p><b>typeof</b> Type Guards involve simply doing a type check before working with a value. Since unions allow
+        multiple types for a value, we can first check what came through before working with it.
+    </p>
+
+    <p>This isn't a TypeScript specific pattern, obviously we might have to check the type in normal JS. But happens a
+        lot because of the additional guards TS puts on us.</p>
+
+    <h2>Truthiness Guard</h2>
+
+    <p><b>Truthiness</b> Type Guards involve checking a value for being truthy or falsy before working with it. Very
+        helpful in avoiding erros when values might be null or undefined.
+    </p>
+
+    <h2>Equality Narrowing</h2>
+
+    <p><b>Equality</b> Type Guards involve comparing types to each other before doing certain operations with values. By
+        checking two values against one another, we can be sure they're both the same before working with them in a
+        type-specific way.
+    </p>
+
+    <h2>In Operator</h2>
+
+    <p>JavaScripts <b>in</b> operator helps check if a certain property exists in an object. This means we can use it to
+        check if a value exists in an object, according to its type alias or aliases, before working with it.
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
