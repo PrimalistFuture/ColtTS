@@ -55,3 +55,65 @@ const getRandomElementArrow = <T,>(list: T[]): T => {
     let randIdx = Math.floor(Math.random() * list.length);
     return list[randIdx];
 }
+
+// generic with multiple type parameters
+// U is conventionally used for the second type, V for the third and so on
+// Don't have to provide the return type; TS will infer
+function merge<T, U>(obj1: T, obj2: U) {
+    return {
+        ...obj1,
+        ...obj2
+    }
+}
+// works great when we give it two objects
+merge({ name: 'Vaughn' }, { pets: ['Pepper', 'Rascal', 'Betelgeuse'] });
+// but we aren't actually telling TS that the params need to be objects
+// spreading out a number won't result in an error, but its probably not what I intended or should allow.
+merge({ name: 'Vaughn' }, 0);
+// To do so, we need to say that it extends an object
+// This is called Generic Constraints
+// Return type explicity is the intersection of T & U.
+function mergeObject<T extends object, U extends object>(obj1: T, obj2: U): T & U {
+    return {
+        ...obj1,
+        ...obj2
+    }
+}
+// still works for objects
+mergeObject({ name: 'Vaughn' }, { pets: ['Pepper', 'Rascal', 'Betelgeuse'] });
+// doesn't work for numbers and other unspreadable types
+mergeObject({ name: 'Vaughn' }, 0);
+
+interface Lengthy {
+    length: number;
+}
+// Can be done with custom type interfaces or alias too
+function printDoubleLength<T extends Lengthy>(thing: T): number {
+    return thing.length * 2;
+}
+
+// Setting a default value in a generic
+// if no param is given, it will make an array that it expects to filled with numbers in this case
+function makeEmptyArray<T = number>(): T[] {
+    return [];
+}
+
+// Generic Classes
+// We could add either a song or a video to our playlist without telling our add function which one, and it knows it should expect something of that type
+interface Song {
+    title: string,
+    artist: string,
+}
+interface Video {
+    title: string,
+    creator: string,
+    resolution: string
+}
+
+class Playlist<T> {
+    public queue: T[] = [];
+
+    add(element: T) {
+        this.queue.push(element);
+    }
+}
