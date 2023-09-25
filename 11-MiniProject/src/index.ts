@@ -1,3 +1,5 @@
+// This file is a mess because it is part lesson part mini app. Sorry future me!
+
 // JS AND TS null issue
 
 // Mouse over btn to see that TS knows it is of type HTMLElement or null. TS predefined what a HTMLElement is.
@@ -43,14 +45,55 @@ const form = document.querySelector('form')!;
 // TS is smart, it knows we are writing an anon function in an eventListener with submit, and it doesn't need to be told what e is, it knows it s a submitEvent.
 // If we had writtin this function outside as a named function, it would not know that, and we would have to provide it
 const list = document.querySelector('#todolist')!;
-form.addEventListener('submit', function(e) {
+
+interface Todo {
+  text: string,
+  completed: boolean
+}
+const todos: Todo[] = readTodos();
+// calls createTodo for each element in the todos
+todos.forEach(createTodo);
+
+// If there are todos in localStorage, returns them parsed
+// otherwise return an empty array
+function readTodos(): Todo[] {
+  const todosJSON = localStorage.getItem("todos")
+  if (todosJSON === null) {
+    return [];
+  }
+  return JSON.parse(todosJSON);
+}
+// Updates localStorage with the todos array
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+// Upon submission, creates an new object of type Todo, and adds that to the todo array in memory. Then calls createTodo, saveTodos and resets input text.
+function handleSubmit(e: SubmitEvent) {
   e.preventDefault();
-  const newTodoText = input.value;
+  const newTodo: Todo = {
+    text: input.value,
+    completed: false
+  }
+  todos.push(newTodo);
+  createTodo(newTodo);
+
+  saveTodos();
+  input.value = '';
+}
+// Creates a todo to display on page, checks the box if the todo.completed is true
+function createTodo(todo: Todo) {
   const newLI = document.createElement('li');
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
-  newLI.append(newTodoText);
+  checkbox.checked = todo.completed;
+  checkbox.addEventListener("change", function() {
+    todo.completed = checkbox.checked;
+    saveTodos();
+  })
+  newLI.append(todo.text);
   newLI.append(checkbox);
   list.append(newLI);
-  input.value = '';
-})
+}
+
+form.addEventListener('submit', handleSubmit);
