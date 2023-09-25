@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project Notes</title>
+</head>
+<body>
+  <h1>Notes</h1>
+
+  <p>Colt did a lot. Best to just watch the video again if future me has any questions, but I will try and write down some of the ideas as they come up.</p>
+
+  <p>This section is less focused on syntax than with getting your TS project up and running. So we messed with the config a bit, set up tsc in watch mode, downloaded a server app from npm and got it to run on start by including a line in the package_json.</p>
+
+  <h2>The Lib Compiler Option</h2>
+
+  <p>We saw that TS knows about the document object and has a huge list of its seperate definitions. But we can also turn that off so that it doesn't get in our way. And at the same time, we can also tell TS about other types and whatnot it may not know.</p>
+
+  <p>If we turn the lib option on in the tsconfig.json, we are telling TS what it needs to know, and getting rid of the default behavior of it knowing the DOM and whatnot.</p>
+
+  <p>Files that end in .d.ts are where various types are defined.</p>
+
+  <h2>TS Non-Null Assertion Operator</h2>
+
+  <p>When we use document.getElementById or similar document method and save it to a variable, it will usually return a predefined HTMLElement type or null if it couldn't find it. TS will get mad at us if we try and do stuff that variable, because we might be trying to do something to null, which never works.</p>
+
+  <p>The JS solution is to add a ? after the variable (Check index.ts), or we can add a ! to after the entire method (CT index.ts).</p>
+
+  <h2>Type Assertion Syntax</h2>
+
+  <p>Sometimes, you might have more specific information about a value's type and you want to make sure TS knows it too. You can assert a value's type by using the <b>as</b> keyword, followed by the specific type you want to assert.</p>
+
+  <p>Check the index.ts for examples and syntax.</p>
+
+  <p>Be careful though, the as keyword doesn't actually change the type of the thing, we are just telling TS to treat it as another type for now.</p>
+
+
+</body>
+</html>
