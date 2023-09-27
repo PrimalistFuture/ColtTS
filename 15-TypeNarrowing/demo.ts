@@ -179,7 +179,8 @@ function getFarmAnimalSound(animal: FarmAnimal): string {
             // We should never make it here, if we handled all of the cases correctly
             // never type
             // We are not handling this right because the case in which kind is 'sheep' isn't accounted for.
-            const shouldNeverGetHere: never = animal;
+            const _exhaustiveCheck: never = animal;
+            return 'Should never see this';
     }
 }
 // TS will predictably get mad if we don't have all of these properties, even the kind which mostly just serves to help us tell what interface it is

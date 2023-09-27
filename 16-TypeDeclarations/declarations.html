@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Type Declarations</title>
+</head>
+<body>
+  <h1>Type Declarations</h1>
+
+  <p>This section is about working with 3rd Party JavaScript libraries in a TypeScript project. We ran npm init -y in this folder, and then npm install axios.</p>
+
+  <h2>Declaration review</h2>
+
+  <p>We have seen in the mini project that files that end in .ts are implementation files that contain files that produce .js outputs and are where you would normally write your code. .d.ts files are declaration files that contain only type information - no logic whatsoever.</p>
+
+  <p>Remember that if we want to add another .d.ts file, we need to add it to the lib part of the tsconfig.json we get from tsc --init.</p>
+
+  <p>Some libraries come with their own .d.ts type declaration files. Axios did, we could find and look through it in the node_modules folder in the 'axios' file.</p>
+
+  <p>Lodash did not have its own .d.ts file that came with it. That means we would have to build one, but for just about every library that anyone uses in JavaScript, someone has probably already made a .d.ts file for it. We just have to find it and install it.</p>
+
+  <p>A library on GitHub, DefinitelyTyped, has .d.ts file support for over 7k of the most popular JS libraries.</p>
+
+  <p>To get one such .d.ts file for lodash, we ran <i>npm install --save-dev @types/lodash</i></p>
+
+  <p>The TypeScript docs also have a search of most of the libraries that have .d.ts files for them.</p>
+
+  <h2>Stupid Bug Story</h2>
+
+  <p>So Colt didn't cover how to use the _.sample function that comes with lodash, so I wanted to try to implement it. I knew how to get the data of all users from the previous axios request. But for some reason when I tried to give that data to _.sample, I never got anything back. I though I was using sample wrong, but actually as it turns out I was just not doing anything right. </p>
+
+  <p>I wasn't actually doing anything with what _.sample gave back. So I then realized I could pass it into printUser. Oh okay, that makes sense. But why didn't just _.sample work?</p>
+
+  <p>Well it was working, but I wasn't having it log anything or return anything. I guess I thought _.sample would return the entire sampled thing?? I dunno. Console.logging it worked perfectly and I got all of the stuff back.</p>
+
+
+</body>
+</html>
