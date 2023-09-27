@@ -42,10 +42,27 @@
         check if a value exists in an object, according to its type alias or aliases, before working with it.
     </p>
 
+    <h2>instanceof Narrowing</h2>
 
+    <p><b>instanceof</b> is a JavaScript operator that allows us to check if one thing is an instance of another, such as prototypes and classes or anything else made with the <b>new</b> keyword. This can help us narrow types when working with classes.</p>
 
+    <h2>Type Predicates</h2>
 
+    <p>TypeScript allows us to write custom functions that can narrow the type of a value. These function have a very special return type called a <b>type predicate</b>. A predicate takes the form <b>parameterName is Type</b>.</p>
 
+    <p>Usually these functions are usually phrased like a boolean. isCat isUser and so on. These functions are meant to be reusuable.</p>
+
+    <p>Mostly this just seems like a way of placating TypeScript so it doesn't get mad at you.</p>
+
+    <h2>Discriminated Unions</h2>
+
+    <p>A common pattern in TS that involves creating a literal property that is common across multiple types. We can then narrow the type using that literal property.</p>
+
+    <p>Commonly, this property is called kind or type or __type or TYPE or something similar. It doesn't really matter as long as you are consistent within your interfaces.</p>
+
+    <h2>Exhaustiveness Checking with Never</h2>
+
+    <p>This makes use of the <b>never type</b> which itself is assignable to every other type, but no other type is assignable to never. CTD included in the discrimated Unions section.</p>
 
 
 
